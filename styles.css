@@ -156,12 +156,48 @@ body {
 }
 
 .project-card {
-    background: white;
-    padding: 1.5rem 1.5rem 5rem 1.5rem;
+    font-size: 12px;
+    background: var(--color-bg);
+    padding: 1.5rem;
     border-radius: .3rem;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     border-left: 4px solid var(--card-border);
     transition: transform 0.2s;
+
+    /* Organización de los elementos */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+}
+
+.project-card h4 {
+    margin-bottom: 8px;
+}
+
+/* Estilo para los íconos */
+.project-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.8rem;
+    padding-top: 1rem;
+}
+
+/* Estilos para los íconos */
+.project-icons .icon {
+    width: 20px;
+    height: 20px;
+    color: #888;
+    /* Color base de los íconos */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.project-icons .icon:hover {
+    color: #000;
+    /* Color al hacer hover */
 }
 
 .project-card:hover {
