@@ -1,0 +1,128 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-display: 'Instrument Serif', serif;
+    --font-body: 'Instrument Serif', serif;
+    --sidebar-background: rgb(35, 137, 227);
+    --sidebar-body-highlithed: rgb(12, 114, 203);
+    --sidebar-body: rgb(255, 255, 255);
+    --card-border: rgb(255, 107, 107);
+}
+
+body {
+    font-family: var(--font-body);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    /* Sidebar + Content*/
+    min-height: 100vh;
+}
+
+/* Sidebar */
+#sidebar {
+    height: 100vh;
+    width: 250px;
+    padding: 2rem;
+    background-color: rgb(35, 137, 227);
+    color: var(--sidebar-body);
+}
+
+#sidebar ul {
+    list-style: none;
+}
+
+#sidebar>ul>li:first-child {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+#sidebar a,
+#sidebar .logo {
+    border-radius: .5em;
+    padding: .85em;
+    text-decoration: none;
+    color: var(--font-body);
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+/* Main Content */
+#content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    /* 2 columnas: 75% | 25% */
+    grid-template-rows: auto 1fr;
+    /* Filas: header | proyectos + anuncios | proyectos + trending */
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Header */
+.main-header {
+    grid-column: 1 / -1;
+    /* Ocupa todas las columnas */
+    grid-row: 1;
+}
+
+.upper-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.user-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Projects */
+.projects {
+    grid-column: 1;
+    grid-row: 2 / 3;
+    /* Ocupa desde fila 2 hasta 4 */
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.project-card {
+    background: white;
+    padding: 1.5rem 1.5rem 5rem 1.5rem;
+    border-radius: .3rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--card-border);
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Sidebar derecha */
+.sidebar-right {
+    display: grid;
+    grid-template-rows: 22rem 1fr;
+}
+
+/* Announcements */
+
+
+.announcement-item:not(:last-child) {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Trending */
