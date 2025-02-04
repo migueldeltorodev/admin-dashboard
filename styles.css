@@ -6,50 +6,106 @@
 }
 
 :root {
-    --font-display: 'Instrument Serif', serif;
-    --font-body: 'Instrument Serif', serif;
-    --sidebar-background: rgb(35, 137, 227);
-    --sidebar-body-highlithed: rgb(12, 114, 203);
-    --sidebar-body: rgb(255, 255, 255);
-    --card-border: rgb(255, 107, 107);
+    /* Tipografías */
+    --font-sans: 'Montserrat', sans-serif;
+    --font-serif: 'Merriweather', serif;
+
+    /* Paleta de Colores */
+    --color-bg: #f5f5f5;
+    /* Fondo general claro */
+    --color-text: #333333;
+    /* Texto principal oscuro */
+    --color-primary: #1d3557;
+    /* Azul oscuro (usado en sidebar y encabezados) */
+    --color-secondary: #457b9d;
+    /* Azul medio para hover y acentos secundarios */
+    --color-accent: #e63946;
+    /* Acento rojizo (para bordes, botones, etc.) */
+
+    /* Específicos para la Sidebar */
+    --sidebar-bg: var(--color-primary);
+    --sidebar-text: #f1faee;
+    /* Un color claro para contraste en la sidebar */
+    --sidebar-hover: var(--color-secondary);
+
+    /* Otros */
+    --card-border: var(--color-accent);
 }
 
 body {
-    font-family: var(--font-body);
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
     display: grid;
     grid-template-columns: auto 1fr;
-    /* Sidebar + Content*/
+    /* Sidebar de 250px y contenido restante */
     min-height: 100vh;
 }
 
-/* Sidebar */
+/* Sidebar General */
 #sidebar {
     height: 100vh;
     width: 250px;
     padding: 2rem;
-    background-color: rgb(35, 137, 227);
-    color: var(--sidebar-body);
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    gap: 1.5rem;
 }
 
+/* Se elimina el padding interno para un control más preciso */
 #sidebar ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Logo y primer elemento */
 #sidebar>ul>li:first-child {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 1rem;
+    font-weight: 700;
+    font-family: var(--font-serif);
+    margin-bottom: 2rem;
 }
 
-#sidebar a,
-#sidebar .logo {
-    border-radius: .5em;
-    padding: .85em;
-    text-decoration: none;
-    color: var(--font-body);
+/* Estilo base para todos los enlaces de la sidebar */
+#sidebar a {
     display: flex;
     align-items: center;
     gap: 1em;
+    padding: 0.85em;
+    border-radius: 0.5em;
+    text-decoration: none;
+    color: var(--sidebar-text);
+    transition: background-color 0.3s ease-in-out;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+/* Establecemos un tamaño y color uniforme para los íconos */
+#sidebar a svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--sidebar-text);
+}
+
+/* Efecto hover para realzar la interacción */
+#sidebar a:hover {
+    background-color: var(--sidebar-hover);
+}
+
+/* Opcional: Margen inferior para cada elemento de navegación */
+#sidebar li.nav-item {
+    margin-bottom: 0.5rem;
+}
+
+/* Estilo específico para la separación */
+#sidebar li.separation {
+    margin-top: 2.5rem;
 }
 
 /* Main Content */
