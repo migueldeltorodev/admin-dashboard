@@ -32,6 +32,11 @@
     --card-border: var(--color-accent);
 }
 
+/* Typography */
+h4.small {
+    margin-bottom: 5px;
+}
+
 body {
     font-family: var(--font-sans);
     background-color: var(--color-bg);
@@ -156,7 +161,7 @@ body {
 }
 
 .project-card {
-    font-size: 12px;
+    font-size: 13px;
     background: var(--color-bg);
     padding: 1.5rem;
     border-radius: .3rem;
@@ -207,16 +212,45 @@ body {
 /* Sidebar derecha */
 .sidebar-right {
     display: grid;
-    grid-template-rows: 22rem 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
 }
 
 /* Announcements */
-
+.announcement-list {
+    margin-top: 1rem;
+    font-size: 13px;
+    background: var(--color-bg);
+    padding: 1.5rem;
+    border-radius: .3rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
 
 .announcement-item:not(:last-child) {
-    border-bottom: 1px solid #eee;
+    border-bottom: 2px solid rgb(216, 213, 213);
     padding-bottom: 1rem;
     margin-bottom: 1rem;
 }
 
 /* Trending */
+.trending-list {
+    margin-top: 1rem;
+    font-size: 13px;
+    background: var(--color-bg);
+    padding: 1.5rem;
+    border-radius: .3rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.trending-item:not(:last-child) {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.item-detail span {
+    font-weight: 600;
+}
+
+.item-detail p {
+    margin-top: .3rem;
+}
