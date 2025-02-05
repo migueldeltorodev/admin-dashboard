@@ -123,15 +123,15 @@ body {
     grid-template-rows: auto 1fr;
     /* Filas: header | proyectos + anuncios | proyectos + trending */
     gap: 2rem;
-    padding: 2rem;
     background-color: rgba(136, 136, 136, .2);
 }
 
 /* Header */
 .main-header {
     grid-column: 1 / -1;
-    /* Ocupa todas las columnas */
     grid-row: 1;
+    background-color: var(--color-bg);
+    padding: 2rem;
 }
 
 .upper-header {
@@ -149,6 +149,7 @@ body {
 
 /* Projects */
 .projects {
+    padding: 0 1rem 2rem 2rem;
     grid-column: 1;
     grid-row: 2 / 3;
     /* Ocupa desde fila 2 hasta 4 */
@@ -212,6 +213,7 @@ body {
 
 /* Sidebar derecha */
 .sidebar-right {
+    padding-right: 2rem;
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
